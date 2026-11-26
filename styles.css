@@ -571,6 +571,110 @@ a { color: inherit; }
 }
 
 
+/* ---------- Quem somos ---------- */
+.nav a[aria-current="page"] { color: var(--terra-escura); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+
+.eyebrow {
+  margin: 0 0 .75rem;
+  font-weight: 700;
+  font-size: .95rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--terra-escura);
+}
+.section-areia { background: var(--areia); }
+
+.about-title { max-width: 16em; margin-bottom: 2rem; font-size: clamp(2rem, 1.2rem + 3.6vw, 3.25rem); }
+.about-grid { display: grid; gap: 2.5rem; }
+.about-text { max-width: 40rem; }
+.about-text p { color: var(--carvao-suave); }
+.about-text .about-lead { font-size: 1.2rem; color: var(--carvao); }
+
+.slogan {
+  align-self: start;
+  padding: 1.75rem;
+  border: 2px solid var(--carvao);
+  border-radius: 20px;
+  background: var(--areia);
+  box-shadow: 8px 10px 0 var(--carvao);
+}
+.slogan p {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-variation-settings: "SOFT" 100;
+  font-size: clamp(1.4rem, 1.1rem + 1.4vw, 1.9rem);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+.slogan strong { color: var(--terra-escura); }
+
+@media (min-width: 900px) {
+  .about-grid { grid-template-columns: 1.3fr .7fr; gap: 4rem; }
+  .slogan { position: sticky; top: 6.5rem; }
+}
+
+.founder { display: grid; gap: 2rem; align-items: center; }
+.founder-photo {
+  margin: 0;
+  width: min(100%, 22rem);
+  aspect-ratio: 3 / 4;
+  border: 2px solid var(--carvao);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--creme);
+  box-shadow: 10px 12px 0 var(--carvao);
+}
+.founder-photo img { width: 100%; height: 100%; object-fit: cover; }
+.facts { margin: 1.25rem 0 0; }
+.facts > div { padding: .9rem 0; border-top: 1px solid var(--linha); }
+.facts > div:last-child { border-bottom: 1px solid var(--linha); }
+.facts dt { font-size: .95rem; font-weight: 600; color: var(--carvao-suave); }
+.facts dd { margin: .15rem 0 0; font-family: var(--serif); font-weight: 700; font-size: 1.25rem; line-height: 1.25; }
+@media (min-width: 760px) {
+  .founder { grid-template-columns: auto minmax(0, 30rem); gap: 4rem; justify-content: start; }
+}
+
+.tech {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.tech li {
+  display: grid;
+  justify-items: center;
+  gap: .75rem;
+  padding: 1.25rem 1rem 1rem;
+  border: 2px solid var(--carvao);
+  border-radius: 16px;
+  background: #fff;
+  font-weight: 700;
+}
+.tech img { width: 72px; height: 72px; object-fit: contain; }
+@media (min-width: 560px) { .tech { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .tech { grid-template-columns: repeat(4, 1fr); } }
+
+/* Faixa de logos: só aparece com movimento permitido */
+.marquee { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .marquee {
+    display: block;
+    margin-top: 3rem;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+  .marquee-track { display: flex; width: max-content; animation: faixa 32s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  .marquee ul { display: flex; flex-shrink: 0; align-items: center; gap: 3.5rem; padding-right: 3.5rem; }
+  .marquee img { height: 56px; width: 56px; object-fit: contain; }
+  @keyframes faixa {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
 /* ---------- Efeitos de rolagem ---------- */
 .progress {
   position: fixed;
@@ -606,6 +710,8 @@ a { color: inherit; }
 .reveal-on .reveal-stagger > :nth-child(3) { transition-delay: .2s; }
 .reveal-on .reveal-stagger > :nth-child(4) { transition-delay: .3s; }
 .reveal-on .reveal-stagger > :nth-child(5) { transition-delay: .4s; }
+.reveal-on .reveal-stagger > :nth-child(6) { transition-delay: .5s; }
+.reveal-on .reveal-stagger > :nth-child(7) { transition-delay: .6s; }
 
 /* Entrada do texto do topo ao carregar a página */
 @media (prefers-reduced-motion: no-preference) {
