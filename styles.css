@@ -453,8 +453,7 @@ a { color: inherit; }
   line-height: 1;
 }
 .price-cur { font-size: .45em; margin-right: .1em; vertical-align: .55em; }
-.price-per { margin: .25rem 0 0; font-weight: 600; }
-.price-meta { margin: 1rem 0 1.25rem; padding-top: 1rem; border-top: 1px solid var(--linha); color: var(--carvao-suave); }
+.price-per { margin: .25rem 0 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--linha); font-weight: 600; }
 .price-note { margin: 1rem 0 0; font-size: .9rem; color: var(--carvao-suave); }
 
 @media (min-width: 860px) {
