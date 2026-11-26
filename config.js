@@ -6,7 +6,7 @@ window.FIDELA_CONFIG = {
   whatsappMessage: "Olá! Vim pelo site da Fidela Web e quero saber mais sobre o plano.",
 
   // Instagram da empresa, sem o @
-  instagram: "fidelaweb.digital",
+  instagram: "fidelaweb",
 
   // E-mail da empresa (aparece como texto, com botão de copiar)
   email: "fidelaweb@gmail.com",
